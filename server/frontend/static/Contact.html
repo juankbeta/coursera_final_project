@@ -1,0 +1,170 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <style>
+        /* Estilos del contenedor principal */
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Imagen en la parte superior */
+        .banner {
+            background-image: url('/static/images/dealership.jpg'); /* Reemplaza con la ruta de tu imagen */
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        .banner h1 {
+            background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        /* Contenido de contacto */
+        .contact-content {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            color: #007BFF; /* Color azul para el texto del recuadro */
+        }
+
+        .contact-person {
+            width: 30%;
+            text-align: center;
+            border-right: 1px solid #ccc;
+            padding-right: 20px;
+        }
+
+        .contact-person img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 50%;
+        }
+
+        .contact-info {
+            width: 65%;
+        }
+
+        .contact-info h2,
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        .contact-info h2 {
+            margin-top: 0;
+        }
+
+        /* Estilo adicional para el texto sobre la imagen */
+        .banner-text {
+            position: absolute;
+            color: #007BFF; /* Color azul para el texto sobre la imagen */
+            font-size: 24px;
+            font-weight: bold;
+            background: rgba(173, 216, 230, 0.6);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<div>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
+    <div class="container-fluid">
+      <h2 style="padding-right: 5%;">Dealerships</h2>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: larger;" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: larger;" href="/about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" style="font-size: larger;" href="/contact">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ <!-- Contenedor principal -->
+ <div class="container">
+    <!-- Imagen en la parte superior -->
+    <div class="banner">
+        <div class="banner-text">Contact Us</div>
+    </div>
+
+    <div class="contact-content">
+        <!-- Información de la persona de atención al cliente -->
+        <div class="contact-person">
+            <img src="/static/customer-service.jpg" alt="Customer Service"> <!-- Reemplaza con la ruta de tu imagen -->
+            <h2>Cayetana Johnson</h2>
+            <p>Customer Service Representative</p>
+            <p>Email: cayetana.johnson@bestcars.com</p>
+            <p>Phone: +1 (555) 987-6543</p>
+        </div>
+
+        <!-- Información de contacto general -->
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p><strong>Location:</strong> 1234 Main Street, Suite 100, Los Angeles, CA 90001, USA</p>
+            <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+            <p><strong>Email:</strong> info@bestcars.com</p>
+            
+
+            <h2>Contact our National Adversiting team</h2>
+            <p>NationalSales@bestcars.com</p>
+
+            <h2>Contact our Public Relations team</h2>
+            <p>PR@bestcars.com</p>
+
+            <h2>Business Hours</h2>
+            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+            <p>Saturday: 10:00 AM - 4:00 PM</p>
+            <p>Sunday: Closed</p>
+            
+            <h2>Follow Us</h2>
+            <p>Stay connected with us on social media:</p>
+            <p>
+                <a href="https://facebook.com/bestcars">Facebook</a> | 
+                <a href="https://twitter.com/bestcars">Twitter</a> | 
+                <a href="https://instagram.com/bestcars">Instagram</a>
+            </p>
+
+            <h6>Become a bestcars.com car dealer</h6>
+            <h6>Visit growwithbestcars.com</h6>
+
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Best Cars Dealership. All rights reserved.</p>
+</footer>
+</body>
+</html>
