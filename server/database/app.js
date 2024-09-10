@@ -58,17 +58,58 @@ app.get('/fetchReviews/dealer/:id', async (req, res) => {
 
 // Express route to fetch all dealerships
 app.get('/fetchDealers', async (req, res) => {
-//Write your code here
+  try {
+    const documents = await Dealerships.find();
+    res.json(documents);
+  } catch (error) {
+    res.status(500).json({ error: 'Error fetching documents' });
+  }
 });
 
 // Express route to fetch Dealers by a particular state
 app.get('/fetchDealers/:state', async (req, res) => {
-//Write your code here
-});
+  try {
+    const state = req.params.state;
+    
+    if (!state) {
+        return res.status(400).json({ error: 'State parameter is required' });
+    }
+    
+    const documents = await Dealerships.find({ state: state });
+    
+    if (documents.length === 0) {
+        return res.status(404).json({ message: 'No dealerships found for the specified state' });
+    }
+    
+    res.json(documents);
+  } catch (error) {
+    // Manejo de errores
+    console.error('Error fetching dealers:', error);
+    res.status(500).json({ error: 'Error fetching documents' });
+  }
+});    
 
 // Express route to fetch dealer by a particular id
 app.get('/fetchDealer/:id', async (req, res) => {
-//Write your code here
+    try {
+      const id = req.params.id;
+      
+      if (!id) {
+        return res.status(400).json({ error: 'Id parameter is required' });
+      }
+      
+      const documents = await Dealerships.find({ id: id });
+      
+      if (documents.length === 0) {
+        return res.status(404).json({ message: 'No dealerships found for the specified state' });
+      }
+      
+      res.json(documents);
+    } catch (error) {
+      // Manejo de errores
+      console.error('Error fetching dealers:', error);
+      res.status(500).json({ error: 'Error fetching documents' });
+    }
 });
 
 //Express route to insert review
