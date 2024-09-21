@@ -7,26 +7,26 @@ class CarMake(models.Model):
     description = models.TextField()
     country_of_origin = models.CharField(
         max_length=100, blank=True, null=True
-    )  
+    )
     founded_year = models.PositiveIntegerField(
         blank=True, null=True
-    )  
+    )
     website = models.URLField(
         blank=True, null=True
-    ) 
+    )
     headquarters = models.CharField(
         max_length=255, blank=True, null=True
-    )  
+    )
 
     def __str__(self):
-        return self.name  
+        return self.name
 
 
 class CarModel(models.Model):
     car_make = models.ForeignKey(
         CarMake, on_delete=models.CASCADE
-    )  
-    name = models.CharField(max_length=100) 
+    )
+    name = models.CharField(max_length=100)
 
     CAR_TYPES = [
         ('SEDAN', 'Sedan'),
@@ -42,7 +42,7 @@ class CarModel(models.Model):
     ]
     type = models.CharField(
         max_length=12, choices=CAR_TYPES, default='SUV'
-    )  
+    )
     year = models.IntegerField(
         default=2023,
         validators=[
@@ -50,29 +50,28 @@ class CarModel(models.Model):
             MinValueValidator(2015)
         ]
     )
-    
+
     engine = models.CharField(
         max_length=50, blank=True, null=True
-    )  
+    )
     transmission = models.CharField(
-        max_length=20, 
-        choices=[('Automatic', 'Automática'), ('Manual', 'Manual')], 
+        max_length=20,
+        choices=[('Automatic', 'Automática'), ('Manual', 'Manual')],
         blank=True
     )
     fuel_type = models.CharField(
-        max_length=15, 
+        max_length=15,
         choices=[
-            ('Gasoline', 'Gasolina'), 
-            ('Diesel', 'Diésel'), 
-            ('Electric', 'Eléctrico'), 
+            ('Gasoline', 'Gasolina'),
+            ('Diesel', 'Diésel'),
+            ('Electric', 'Eléctrico'),
             ('Hybrid', 'Híbrido')
-        ], 
+        ],
         blank=True
-    )  
+    )
     price = models.DecimalField(
         max_digits=10, decimal_places=2, blank=True, null=True
-    )  
+    )
 
     def __str__(self):
         return f"{self.car_make.name} {self.name} ({self.year})"
-
